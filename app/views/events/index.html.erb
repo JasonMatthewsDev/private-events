@@ -1,3 +1,3 @@
 <% @events.each do |e| %>
-    <%= content_tag :div, e.name %>
+    <%= content_tag :div, link_to(e.name, e) %>
 <% end %>

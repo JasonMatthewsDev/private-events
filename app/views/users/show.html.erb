@@ -1,1 +1,13 @@
 <%= @user.username %>
+<h3>Created:</h3>
+<% @user.events.each do |e| %>
+    <%= content_tag :div, e.name %>
+<% end %>
+
+<br />
+
+<h3>Attending:</h3>
+
+<% @user.attended_events.each do |e| %>
+    <%= content_tag :div, e.name %>
+<% end %>

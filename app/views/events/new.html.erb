@@ -1,0 +1,9 @@
+<%= form_for(@event) do |f| %>
+    <%= f.label(:name) %>
+    <%= f.text_field(:name) %>
+    
+    <%= f.label(:date) %>
+    <%= f.datetime_local_field(:date) %>
+    
+    <%= f.submit("Create Event") %>
+<% end %>

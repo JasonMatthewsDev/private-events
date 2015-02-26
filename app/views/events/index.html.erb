@@ -1,3 +1,9 @@
-<% @events.each do |e| %>
+<h3>Upcoming:</h3>
+<% @events.upcoming.each do |e| %>
+    <%= content_tag :div, link_to(e.name, e) %>
+<% end %>
+
+<h3>Past:</h3>
+<% @events.past.each do |e| %>
     <%= content_tag :div, link_to(e.name, e) %>
 <% end %>

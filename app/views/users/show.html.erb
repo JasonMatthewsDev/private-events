@@ -1,13 +1,22 @@
 <%= @user.username %>
-<h3>Created:</h3>
-<% @user.events.each do |e| %>
+<h3>Created Upcoming:</h3>
+<% @user.events.upcoming.each do |e| %>
+    <%= content_tag :div, e.name %>
+<% end %>
+
+<h3>Created Past:</h3>
+<% @user.events.past.each do |e| %>
     <%= content_tag :div, e.name %>
 <% end %>
 
 <br />
 
-<h3>Attending:</h3>
+<h3>Attending Upcoming:</h3>
+<% @user.attended_events.upcoming.each do |e| %>
+    <%= content_tag :div, e.name %>
+<% end %>
 
-<% @user.attended_events.each do |e| %>
+<h3>Attending Past:</h3>
+<% @user.attended_events.past.each do |e| %>
     <%= content_tag :div, e.name %>
 <% end %>

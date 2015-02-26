@@ -4,4 +4,7 @@ class Event < ActiveRecord::Base
     has_many :attendees, through: :event_attendances
     
     validates :name, presence: :true
+    
+	scope :upcoming, -> { where("date >= ?", Date.current) }
+	scope :past, -> { where("date < ?", Date.current) }
 end
